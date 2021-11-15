@@ -8,29 +8,43 @@
 //DICHIARAZIONE
 //chiedere numero km che vuole percorrere
 let kmTravel = parseInt( prompt( 'Quanti chilometri vuoi percorrere?' ) );
-console.log(kmTravel);
 //chiedere età passeggero
 let ageUser = parseInt( prompt( 'Qual\'è la tua età?' ) );
+
+// //LOGICA
+// //costo biglietto
+// let costTicket = kmTravel * 0.21;
+// //prezzo minorenni e prezzo over 65 
+// let ticketUnderage = parseInt('');
+// let ticketOver65 = parseInt('');
+// //calcolo sconti
+// if( ageUser < 18 ) {
+//     ticketUnderage = ( costTicket * 20 ) / 100;
+//     costTicket = ( costTicket - ticketUnderage );
+// }else if( ageUser >= 65 ) {
+//     ticketOver65 = ( costTicket * 40 ) / 100;
+//     costTicket = ( costTicket - ticketOver65 );
+// }
+
+// let costTicketForUser = costTicket.toFixed(2);
+
+// //OUTPUT
+// document.getElementById('user_message').innerHTML = `Il costo del biglietto è ${costTicketForUser}`;
 
 //LOGICA
 //costo biglietto
 let costTicket = kmTravel * 0.21;
-//prezzo minorenni e prezzo over 65 
-let ticketUnderage = parseInt('');
-let ticketOver65 = parseInt('');
-//calcolo sconti
-if( ageUser < 18 ) {
-    ticketUnderage = ( costTicket * 20 ) / 100;
-    costTicket = ( costTicket - ticketUnderage );
-}else if( ageUser >= 65 ) {
-    ticketOver65 = ( costTicket * 40 ) / 100;
-    costTicket = ( costTicket - ticketOver65 );
+
+if ( ageUser < 18 ) {
+    costTicket = costTicket - (costTicket * 0.2)
+} else if ( ageUser >= 65 ) {
+    costTicket = costTicket - (costTicket * 0.4)
 }
-let costTicketForUser = costTicket.toFixed(2);
+
+costTicket = costTicket.toFixed(2);
 
 //OUTPUT
-document.getElementById('user_message').innerHTML = `Il costo del biglietto è ${costTicketForUser}`;
-
+document.getElementById('user_message').innerHTML = `Il costo del biglietto è ${costTicket}`;
 
 
 
